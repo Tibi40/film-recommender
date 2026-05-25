@@ -36,17 +36,6 @@ Puteți găsi setul de date original aici: https://www.kaggle.com/datasets/tmdb/
 
 **Modelul final:** Am combinat Sentence Transformers cu TF-IDF, folosind o pondere de 70% pentru partea semantică și 30% pentru TF-IDF.
 
-## Cum să rulați
-
-Pentru a rula proiectul, vă recomandăm să urmați pașii de mai jos:
-
-```bash
-
-pip install -r requirements.txt
-
-# Deschideți notebook.ipynb în Google Colab
-
-```
 
 ## Ce am învățat
 
