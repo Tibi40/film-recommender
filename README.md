@@ -1,36 +1,53 @@
 # 🎬 Sistem de Recomandare Filme
 
 ## Problema
-Vreau sa construiesc un sistem care recomanda filme pe baza unei descrieri date de utilizator, similar cu Netflix. Daca utilizatorul scrie "vreau un film de actiune in spatiu", sistemul gaseste filmele cele mai potrivite.
+
+Sistemul nostru are scopul de a recomanda filme.
 
 ## Dataset
-- Sursa: Dataset creat manual cu filme cunoscute (inspirat din TMDB Kaggle Dataset)
-- Link Kaggle original: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
-- Dimensiune: 50 filme
-- Coloane: titlu, gen, rating, descriere, lungime_descriere
+
+Pentru acest proiect, am utilizat un set de date despre filme de pe Kaggle, cunoscut sub numele de TMDB 5000 Movie Dataset.
+
+Puteți găsi setul de date original aici: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata.
 
 ## Ce am facut
-1. Am explorat datele (EDA) cu 6 grafice
-2. Am curatat textul (lowercase, caractere speciale)
-3. Am antrenat 2 modele: TF-IDF si Sentence Transformers
-4. Am comparat modelele
-5. Am creat un model final care le combina pe ambele
-6. Am salvat modelele
+
+1. Am început prin a explora datele, folosind 6 grafice pentru a înțelege mai bine informațiile disponibile.
+
+2. Am curățat textul, transformând toate caracterele în litere mici și eliminând caracterele speciale.
+
+3. Am antrenat două modele diferite: unul folosind tehnologia TF-IDF și celălalt folosind Sentence Transformers.
+
+4. Am comparat performanțele celor două modele pentru a vedea care este mai eficient.
+
+5. Am decis să creez un model final care combină avantajele ambelor modele.
+
+6. Am salvat modelele pentru a putea fi utilizate ulterior.
 
 ## Rezultate
 
-| Model | Scor mediu | Viteza | Intelege sinonime |
+| Model | Scor mediu | Viteza | Înțelege sinonime |
+
 |-------|-----------|--------|-------------------|
-| TF-IDF | ~0.15 | Rapid | Nu |
-| Sentence Transformers | ~0.45 | Mai lent | Da |
 
-**Modelul final:** Sentence Transformers + TF-IDF combinat (70% semantic + 30% tfidf)
+| TF-IDF | în jur de 0.15 | Rapid | Nu |
 
-## Cum sa rulati
+| Sentence Transformers | în jur de 0.45 | Mai lent | Da |
+
+**Modelul final:** Am combinat Sentence Transformers cu TF-IDF, folosind o pondere de 70% pentru partea semantică și 30% pentru TF-IDF.
+
+## Cum să rulați
+
+Pentru a rula proiectul, vă recomandăm să urmați pașii de mai jos:
+
 ```bash
+
 pip install -r requirements.txt
-# Deschideti notebook.ipynb in Google Colab
+
+# Deschideți notebook.ipynb în Google Colab
+
 ```
 
-## Ce am invatat
-A fost interesant sa vad diferenta intre un model clasic (TF-IDF) si unul bazat pe AI (Sentence Transformers). TF-IDF cauta cuvinte exacte, pe cand modelul semantic intelege sensul. De exemplu, daca caut "aventura cosmica", TF-IDF nu gaseste nimic relevant dar modelul semantic gaseste filme despre spatiu si astronauti.
+## Ce am învățat
+
+A fost foarte interesant să văd diferența dintre un model clasic de recomandare, cum ar fi TF-IDF, și unul bazat pe inteligență artificială.
